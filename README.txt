@@ -1,1 +1,1 @@
-Hello Git and Github
+This repository stores the codings I have done for training or courses.
