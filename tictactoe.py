@@ -126,5 +126,8 @@ while True:
 print("Good bye.")
 time.sleep(3)
 
+# Some codes are referenced from:
+# https://medium.com/byte-tales/the-classic-tic-tac-toe-game-in-python-3-1427c68b8874
+
 # potential improvements:
 # 1) to modify draw as the draw could take place before the last possible move (e.g. no potential winning combinations.)
