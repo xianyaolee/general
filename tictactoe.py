@@ -1,42 +1,5 @@
 import time
 
-# welcome screen
-print("X   X XXXXX X      XXX   XXX  X   X XXXXX")
-print("X   X X     X     X   X X   X XX XX X")
-print("X   X X     X     X     X   X XX XX X")
-print("X X X XXX   X     X     X   X X X X XXX")
-print("XX XX X     X     X     X   X X   X X")
-print("XX XX X     X     X   X X   X X   X X")
-print("X   X XXXXX XXXXX  XXX   XXX  X   X XXXXX")
-print("\n")
-time.sleep(0.5)
-print("XXXXX  XXX")
-print("  X   X   X")
-print("  X   X   X")
-print("  X   X   X")
-print("  X   X   X")
-print("  X   X   X")
-print("  X    XXX")
-print("\n")
-time.sleep(0.5)
-print("X   X  X   X X  XXX")
-print("X   X   X X  X X   X")
-print(" X X     X     X")
-print("  X      X      XXX")
-print(" X X     X         X")
-print("X   X    X     X   X")
-print("X   X    X      XXX")
-print("\n")
-time.sleep(0.5)
-print("XXXXX XXXXX  XXX   XXXXX   X    XXX   XXXXX  XXX  XXXXX")
-print("  X     X   X   X    X    X X  X   X    X   X   X X    ")
-print("  X     X   X        X   X   X X        X   X   X X    ")
-print("  X     X   X        X   XXXXX X        X   X   X XXX  ")
-print("  X     X   X        X   X   X X        X   X   X X    ")
-print("  X     X   X   X    X   X   X X   X    X   X   X X    ")
-print("  X   XXXXX  XXX     X   X   X  XXX     X    XXX  XXXXX")
-print("\n")
-time.sleep(0.5)
 print("Please key in Player 1 name.")
 player_one_name = input()
 print("Please key in Player 2 name.")
@@ -49,8 +12,7 @@ theBoard = {"1": " ","2": " ","3": " ","4": " ","5": " ","6": " ","7": " ","8": 
 
 # print the status of the board
 def printBoard(board):
-    print("|"+board
-          ["1"]+"|"+board["2"]+"|"+board["3"]+"|")
+    print("|"+board["1"]+"|"+board["2"]+"|"+board["3"]+"|")
     print("+-+-+-+")
     print("|"+board["4"]+"|"+board["5"]+"|"+board["6"]+"|")
     print("+-+-+-+")
@@ -63,7 +25,7 @@ def play_a_turn(playername, board, first_player = True):
         try:
             player_input = input("Pick a number between 1 to 9 (inclusive).")
             if int(player_input) in range(1,10):
-                break
+                break #why break here? 
         except:
             print("Invalid input, try again!")
             pass
@@ -100,8 +62,8 @@ def game(board):
         if end_game == 0:
             printBoard(board)
             play_a_turn(player_one_name,theBoard, True)
-            if i > 1:
-                check_winner(player_one_name, player_two_name,board)
+            if i > 1: # duplicate code here as line 70
+                check_winner(player_one_name, player_two_name,board) 
         if end_game == 0:
             printBoard(board)
             play_a_turn(player_two_name,theBoard, False)
