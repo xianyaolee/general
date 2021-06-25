@@ -1,4 +1,6 @@
 import time
+
+# welcome screen
 print("X   X XXXXX X      XXX   XXX  X   X XXXXX")
 print("X   X X     X     X   X X   X XX XX X")
 print("X   X X     X     X     X   X XX XX X")
@@ -41,11 +43,11 @@ print("Please key in Player 2 name.")
 player_two_name = input()
 print("Hi, {name_one} and {name_two}".format(name_one = player_one_name,name_two = player_two_name))
 
-#instructions
-
+# default board with no inputs
 theBoard = {"1": " ","2": " ","3": " ","4": " ","5": " ","6": " ","7": " ","8": " ",
 "9": " "}
 
+# print the status of the board
 def printBoard(board):
     print("|"+board
           ["1"]+"|"+board["2"]+"|"+board["3"]+"|")
@@ -53,7 +55,8 @@ def printBoard(board):
     print("|"+board["4"]+"|"+board["5"]+"|"+board["6"]+"|")
     print("+-+-+-+")
     print("|"+board["7"]+"|"+board["8"]+"|"+board["9"]+"|")
-       
+
+# to play a turn in tic tac toe game
 def play_a_turn(playername, board, first_player = True):
     print("{player}, it\'s your turn!".format(player=playername))
     while True:
@@ -72,6 +75,7 @@ def play_a_turn(playername, board, first_player = True):
     else:
         board[player_input] = "O"
 
+# to check and return the winner
 def check_winner(player_one_name, player_two_name, board):
     winning_combinations = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
     for winning_combination in winning_combinations:
@@ -86,7 +90,8 @@ def check_winner(player_one_name, player_two_name, board):
             break
         else:
             pass
-        
+
+# sequence of the game 
 def game(board):
     print("Let's get started.")
     global end_game
@@ -110,6 +115,7 @@ def game(board):
     if end_game == 0:
         print("It's a draw! It\'s ok, life is not always about winning. :)")
 
+# execute game play and check if the players want to play again after the game.
 while True:
     theBoard = {"1": " ","2": " ","3": " ","4": " ","5": " ","6": " ","7": " ","8": " ",
 "9": " "}
